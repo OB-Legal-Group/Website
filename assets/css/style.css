@@ -191,9 +191,9 @@ nav a.active:after {
   background:
     linear-gradient(
       105deg,
-      rgba(12, 27, 46, 0.96),
-      rgba(20, 37, 61, 0.78) 54%,
-      rgba(20, 37, 61, 0.62)
+      rgba(12, 27, 46, 0.86),    /* was 0.96 */
+      rgba(20, 37, 61, 0.55) 54%, /* was 0.78 */
+      rgba(20, 37, 61, 0.38)     /* was 0.62 */
     ),
     var(--hero-photo) center/cover;
 }
