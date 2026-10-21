@@ -98,35 +98,7 @@ nav a.active:after {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-.header-socials {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.header-socials a {
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  color: var(--gold-light);
-  border: 1px solid #ffffff30;
-  border-radius: 9px;
-  font:
-    700 1rem/1 Manrope,
-    sans-serif;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    transform 0.2s;
-}
-.header-socials a:hover {
-  background: var(--gold);
-  color: var(--navy);
-  transform: translateY(-2px);
-}
-.header-socials svg,
-.social-icon svg {
+}.social-icon svg {
   width: 17px;
   height: 17px;
   display: block;
@@ -135,9 +107,7 @@ nav a.active:after {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-.header-socials .icon-fill,
-.social-icon .icon-fill {
+}.social-icon .icon-fill {
   fill: currentColor;
   stroke: none;
 }
@@ -217,6 +187,7 @@ nav a.active:after {
   display: flex;
   align-items: center;
   color: #fff;
+  --hero-photo: url("../img/hero-mobile.webp");
   background:
     linear-gradient(
       105deg,
@@ -224,9 +195,12 @@ nav a.active:after {
       rgba(20, 37, 61, 0.78) 54%,
       rgba(20, 37, 61, 0.62)
     ),
-    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85")
-      center/cover,
-    url("../img/hero-building.svg") center/cover;
+    var(--hero-photo) center/cover;
+}
+@media (min-width: 601px) {
+  .hero {
+    --hero-photo: url("../img/hero-web.webp");
+  }
 }
 .hero:after {
   content: "";
@@ -337,23 +311,12 @@ h3 {
 .section.soft {
   background: var(--soft);
 }
-.section.dark {
-  background: var(--navy);
-  color: #fff;
-}
-.section.dark h2,
-.section.dark h3 {
-  color: #fff;
-}
 .section-head {
   max-width: 760px;
   margin-bottom: 36px;
 }
 .section-head p {
   color: var(--muted);
-}
-.section.dark .section-head p {
-  color: #d3dce8;
 }
 .cards {
   display: grid;
@@ -564,20 +527,6 @@ html[dir="ltr"] .text-link:hover span {
 .contact-info h2 {
   color: #fff;
 }
-.contact-row {
-  display: flex;
-  gap: 14px;
-  margin: 22px 0;
-  align-items: flex-start;
-}
-.contact-row .card-icon {
-  margin: 0;
-  flex-shrink: 0;
-}
-.contact-row small {
-  display: block;
-  color: #b9c6d5;
-}
 .contact-form {
   padding: 30px;
   border: 1px solid var(--line);
@@ -725,7 +674,7 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   width: 76px;
   height: 76px;
   padding: 0;
-  background: transparent url("../img/whatsapp-button.png") center/contain
+  background: transparent url("../img/whatsapp-button.svg") center/contain
     no-repeat;
   color: transparent;
   border: 0;
@@ -762,11 +711,6 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   opacity: 1;
   transform: none;
 }
-.empty-state {
-  padding: 30px;
-  background: var(--soft);
-  border-radius: 14px;
-}
 
 #formStatus.success {
     color: #198754;
@@ -786,13 +730,6 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   }
 }
 @media (max-width: 1050px) {
-  .header-socials {
-    gap: 4px;
-  }
-  .header-socials a {
-    width: 27px;
-    height: 27px;
-  }
   nav {
     gap: 14px;
   }
@@ -802,9 +739,6 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   .topbar {
     gap: 14px;
   }
-  .nav-cta {
-    display: none;
-  }
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -813,9 +747,6 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   }
 }
 @media (max-width: 780px) {
-  .header-socials {
-    display: none;
-  }
   .topbar {
     min-height: 72px;
   }
@@ -972,4 +903,29 @@ html[dir="ltr"] .footer-social .social-links a:hover {
     opacity: 1;
     transform: none;
   }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  inset-inline-start: 12px;
+  z-index: 1000;
+  padding: 10px 18px;
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.skip-link:focus {
+  top: 12px;
+}
+main:focus {
+  outline: none;
+}
+.botcheck {
+  display: none !important;
+}
+.h-captcha {
+  margin: 16px 0;
 }
