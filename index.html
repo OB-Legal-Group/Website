@@ -28,11 +28,17 @@
     <meta content="https://www.example.com/assets/img/og-image.png" property="og:image" />
     <meta content="1200" property="og:image:width" />
     <meta content="630" property="og:image:height" />
+    <meta content="OB Legal Group — حلول قانونية وتجارية برؤية دولية" property="og:image:alt" />
     <meta content="en_US" property="og:locale:alternate" />
     <meta content="tr_TR" property="og:locale:alternate" />
     <meta content="summary_large_image" name="twitter:card" />
-    <link href="favicon-48.png" rel="icon" sizes="48x48" type="image/png" />
-    <link href="apple-touch-icon.png" rel="apple-touch-icon" />
+    <meta content="حلول قانونية وتجارية برؤية دولية | OB Legal Group" name="twitter:title" />
+    <meta content="ندعم الشركات والمستثمرين والأفراد في المسائل القانونية والتجارية والعابرة للحدود، بمنهج عملي يضع احتياجات العميل في المقدمة." name="twitter:description" />
+    <meta content="https://www.example.com/assets/img/og-image.png" name="twitter:image" />
+    <meta content="OB Legal Group — حلول قانونية وتجارية برؤية دولية" name="twitter:image:alt" />
+    <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/img/favicon-48.png" rel="icon" sizes="48x48" type="image/png" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -41,45 +47,30 @@
     <script>
         document.documentElement.classList.add("js");
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "OB Legal Group",
-        "url": "https://www.example.com/",
-        "description": "ندعم الشركات والمستثمرين والأفراد في المسائل القانونية والتجارية والعابرة للحدود، بمنهج عملي يضع احتياجات العميل في المقدمة.",
-        "logo": "https://www.example.com/apple-touch-icon.png",
-        "inLanguage": "ar",
-        "sameAs": [
-          "https://www.instagram.com/ob_legalgroub",
-          "https://www.facebook.com/share/1cNW6JJQPT/"
-        ],
-        "email": "info@oblegalgroup.com"
-      }
-    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "OB Legal Group", "url": "https://www.example.com/", "description": "ندعم الشركات والمستثمرين والأفراد في المسائل القانونية والتجارية والعابرة للحدود، بمنهج عملي يضع احتياجات العميل في المقدمة.", "logo": "https://www.example.com/assets/img/apple-touch-icon.png", "inLanguage": "ar", "sameAs": ["https://www.instagram.com/ob_legalgroub", "https://www.facebook.com/share/1cNW6JJQPT/"], "email": "info@oblegalgroup.com", "@id": "https://www.example.com/#organization", "image": "https://www.example.com/assets/img/og-image.png", "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "info@oblegalgroup.com", "availableLanguage": ["ar", "en", "tr"]}}</script>
 </head>
 
-<body data-page="home">
+<body>
+    <a class="skip-link" href="#mainContent">تخطَّ إلى المحتوى الرئيسي</a>
     <header>
         <div class="container topbar">
-            <a aria-label="OB Legal Group" class="brand" href="index.html"><img alt="OB Legal Group"
-                    src="assets/img/ob-logo-horizontal.svg" /></a>
+            <a aria-label="OB Legal Group" class="brand" href="./"><img alt="OB Legal Group"
+                    src="assets/img/ob-logo-ar.svg" /></a>
             <nav aria-label="التنقل الرئيسي" id="nav">
-                <a aria-current="page" class="active" href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a
+                <a aria-current="page" class="active" href="./">الرئيسية</a><a href="about.html">من نحن</a><a
                     href="services.html">خدماتنا</a><a href="contact.html">تواصل معنا</a>
             </nav>
             <div aria-label="اللغة" class="languages" role="group">
-                <a aria-current="true" class="active" href="index.html" hreflang="ar" lang="ar">ع</a><a
-                    href="en/index.html" hreflang="en" lang="en">EN</a><a href="tr/index.html" hreflang="tr"
+                <a aria-current="true" class="active" href="./" hreflang="ar" lang="ar">ع</a><a
+                    href="en/" hreflang="en" lang="en">EN</a><a href="tr/" hreflang="tr"
                     lang="tr">TR</a>
             </div>
             <button aria-expanded="false" aria-label="فتح قائمة التنقل" class="menu-toggle" id="menuToggle">
                 ☰
             </button>
         </div>
-        </div>
     </header>
-    <main id="mainContent">
+    <main id="mainContent" tabindex="-1">
         <section class="hero">
             <div class="container hero-inner">
                 <span>OB LEGAL GROUP · خدمات قانونية دولية</span>
@@ -132,7 +123,7 @@
                 </div>
                 <div class="cards">
                     <article class="card reveal">
-                        <div class="card-icon">✧</div>
+                        <div class="card-icon" aria-hidden="true">✧</div>
                         <h3>الاستشارات القانونية</h3>
                         <p>
                             استشارات قانونية لفهم المسائل وتقييم الخيارات وتحديد الخطوات
@@ -142,7 +133,7 @@
                             <span>←</span></a>
                     </article>
                     <article class="card reveal">
-                        <div class="card-icon">▤</div>
+                        <div class="card-icon" aria-hidden="true">▤</div>
                         <h3>الشركات والأعمال</h3>
                         <p>
                             خدمات قانونية للشركات والأعمال تشمل التأسيس والحوكمة والمعاملات
@@ -152,7 +143,7 @@
                             <span>←</span></a>
                     </article>
                     <article class="card reveal">
-                        <div class="card-icon">◎</div>
+                        <div class="card-icon" aria-hidden="true">◎</div>
                         <h3>التجارة والاستثمار الدولي</h3>
                         <p>
                             دعم قانوني في المعاملات العابرة للحدود والاستثمار الأجنبي
@@ -162,7 +153,7 @@
                             <span>←</span></a>
                     </article>
                     <article class="card reveal">
-                        <div class="card-icon">⚖</div>
+                        <div class="card-icon" aria-hidden="true">⚖</div>
                         <h3>القضايا وتسوية النزاعات</h3>
                         <p>
                             دعم في متابعة القضايا والخيارات المتاحة لتسوية النزاعات، بحسب
@@ -172,7 +163,7 @@
                             <span>←</span></a>
                     </article>
                     <article class="card reveal">
-                        <div class="card-icon">◇</div>
+                        <div class="card-icon" aria-hidden="true">◇</div>
                         <h3>الشؤون المالية والديون</h3>
                         <p>
                             دعم قانوني في المطالبات المالية والديون والإعسار وإعادة هيكلة
@@ -182,7 +173,7 @@
                             <span>←</span></a>
                     </article>
                     <article class="card reveal">
-                        <div class="card-icon">⌂</div>
+                        <div class="card-icon" aria-hidden="true">⌂</div>
                         <h3>العقارات والملكية الفكرية</h3>
                         <p>
                             خدمات قانونية في المعاملات والاستثمارات العقارية وحقوق الملكية
@@ -240,11 +231,11 @@
             </div>
         </section>
     </main>
-    <footer id="footer">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <img alt="OB Legal Group" class="footer-logo" src="assets/img/ob-logo-horizontal.svg" />
+                    <img alt="OB Legal Group" class="footer-logo" src="assets/img/ob-logo-ar.svg" />
                     <p>
                         خدمات قانونية وتجارية برؤية دولية لدعم الشركات والمستثمرين في
                         إدارة المعاملات والتحديات.
@@ -253,7 +244,7 @@
                 <div>
                     <h3>روابط سريعة</h3>
                     <div class="footer-links">
-                        <a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a
+                        <a href="./">الرئيسية</a><a href="about.html">من نحن</a><a
                             href="services.html">خدماتنا</a><a href="contact.html">تواصل معنا</a>
                     </div>
                 </div>
@@ -268,20 +259,20 @@
                     <h3>وسائل التواصل الاجتماعي</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/ob_legalgroub" rel="noopener noreferrer"
-                            target="_blank"><span class="social-icon social-instagram"><svg viewBox="0 0 24 24"
+                            target="_blank"><span class="social-icon"><svg viewBox="0 0 24 24"
                                     aria-hidden="true">
                                     <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect>
                                     <circle cx="12" cy="12" r="4"></circle>
                                     <circle cx="17.7" cy="6.5" r="1" class="icon-fill"></circle>
                                 </svg></span><span>Instagram</span></a><a
                             href="https://www.facebook.com/share/1cNW6JJQPT/" rel="noopener noreferrer"
-                            target="_blank"><span class="social-icon social-facebook"><svg viewBox="0 0 24 24"
+                            target="_blank"><span class="social-icon"><svg viewBox="0 0 24 24"
                                     aria-hidden="true">
                                     <path class="icon-fill"
                                         d="M13.7 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5H17V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.8v8z">
                                     </path>
                                 </svg></span><span>Facebook</span></a><a href="https://www.tiktok.com/@omarb"
-                            rel="noopener noreferrer" target="_blank"><span class="social-icon social-tiktok"><svg
+                            rel="noopener noreferrer" target="_blank"><span class="social-icon"><svg
                                     viewBox="0 0 24 24" aria-hidden="true">
                                     <path d="M14 3v11.1a4.2 4.2 0 1 1-3.4-4.1"></path>
                                     <path d="M14 3c.4 2.6 2 4.2 4.8 4.4"></path>
@@ -290,7 +281,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <span>© <span id="year">2026</span> OB Legal Group.
+                <span>© <span>2026</span> OB Legal Group.
                     <span>جميع الحقوق محفوظة.</span></span>
             </div>
         </div>
