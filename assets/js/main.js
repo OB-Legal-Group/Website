@@ -1,4 +1,4 @@
-/* OB Legal Group — سلوك الصفحة فقط. النصوص والترجمات تولَّد في HTML بواسطة build.py */
+/* OB Legal Group — page behaviour: navigation, contact form, reveal-on-scroll */
 const $ = (s, r = document) => r.querySelector(s);
 
 function initNavigation() {
@@ -11,9 +11,35 @@ function initNavigation() {
 }
 
 
+/* hCaptcha: set to false to remove the captcha from the contact form.
+   Keep it in sync with the hCaptcha option in your Web3Forms dashboard. */
+const CAPTCHA_ENABLED = true;
+const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"; // public Web3Forms free-plan key
+
+function initCaptcha(form) {
+  if (!CAPTCHA_ENABLED) return;
+
+  const button = form.querySelector('[type="submit"]');
+  if (!button) return;
+
+  const widget = document.createElement("div");
+  widget.className = "h-captcha";
+  widget.dataset.sitekey = HCAPTCHA_SITEKEY;
+  button.before(widget);
+
+  const lang = document.documentElement.lang || "en";
+  const script = document.createElement("script");
+  script.src = `https://js.hcaptcha.com/1/api.js?hl=${lang}&recaptchacompat=off`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
 function initContactForm() {
   const form = $("#contactForm");
   if (!form) return;
+
+  initCaptcha(form);
 
   const status = $("#formStatus");
   const d = form.dataset;
@@ -31,6 +57,15 @@ function initContactForm() {
     e.preventDefault();
 
     if (!form.reportValidity()) return;
+
+    if (form.querySelector(".h-captcha")) {
+      const token = form.querySelector('[name="h-captcha-response"]')?.value;
+
+      if (!token) {
+        say(d.captcha || "", "error");
+        return;
+      }
+    }
 
     const data = new FormData(form);
 
@@ -58,7 +93,7 @@ function initContactForm() {
         const result = await response.json();
 
         if (!response.ok || result.success !== true) {
-          throw new Error("Submission failed");
+          throw new Error(result.message || "Submission failed");
         }
 
         form.reset();
@@ -67,6 +102,9 @@ function initContactForm() {
         console.error("Contact form submission failed:", error);
         say(d.error || "", "error");
       } finally {
+        // hCaptcha tokens are single-use: always request a fresh one
+        if (window.hcaptcha) window.hcaptcha.reset();
+
         if (button) {
           button.disabled = false;
           button.textContent = originalText;
@@ -76,7 +114,7 @@ function initContactForm() {
       return;
     }
 
-    // الإبقاء على طريقة البريد الإلكتروني القديمة عند عدم ضبط endpoint
+    // Fallback: open a mailto link when no form endpoint is configured
     const label = (id) =>
       (form.querySelector(`label[for="${id}"]`) || {}).textContent || id;
 
