@@ -4,7 +4,7 @@
   --gold: #d9a928;
   --gold-light: #f1d18a;
   --ink: #26354a;
-  --muted: #667386;
+  --muted: #5b687a;
   --paper: #fff;
   --soft: #f3f5f8;
   --line: #e1e6ed;
@@ -135,6 +135,9 @@ nav a.active:after {
   padding: 6px 8px;
   cursor: pointer;
   font-size: 0.78rem;
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
 }
 .languages a.active {
   background: var(--gold);
@@ -218,7 +221,7 @@ nav a.active:after {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--gold);
+  color: #8a6508;
   font-weight: 800;
   font-size: 0.86rem;
   letter-spacing: 0.06em;
@@ -265,6 +268,12 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 30px;
+}
+.hero .eyebrow,
+.page-hero .eyebrow,
+.contact-info .eyebrow,
+.feature-panel .eyebrow {
+  color: var(--gold);
 }
 .hero .eyebrow {
   animation: fadeUp 0.7s both;
@@ -376,7 +385,7 @@ h3 {
 }
 .text-link {
   font-weight: 800;
-  color: #9a710d;
+  color: #8a6508;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -592,6 +601,10 @@ html[dir="ltr"] .text-link:hover span {
   color: #d9e0e9;
   margin-bottom: 10px;
 }
+.breadcrumb a {
+  display: inline-block;
+  padding: 5px 0;
+}
 footer {
   background: #0d1b2d;
   color: #fff;
@@ -655,9 +668,13 @@ html[dir="ltr"] .footer-social .social-links a:hover {
 }
 .footer-links {
   display: grid;
-  gap: 7px;
+  gap: 2px;
   color: #d9e1ea;
   font-size: 0.92rem;
+}
+.footer-links a {
+  display: block;
+  padding: 5px 0;
 }
 .footer-links a:hover {
   color: var(--gold);
@@ -946,4 +963,9 @@ main:focus {
   .cards > .card:last-child:nth-child(3n + 1) {
     grid-column: 2;
   }
+}
+
+.brand img,
+.footer-logo {
+  height: auto;
 }
