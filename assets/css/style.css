@@ -266,18 +266,7 @@ h3 {
   gap: 12px;
   margin-top: 30px;
 }
-.hero .eyebrow {
-  animation: fadeUp 0.7s both;
-}
-.hero h1 {
-  animation: fadeUp 0.8s 0.12s both;
-}
-.hero p {
-  animation: fadeUp 0.8s 0.24s both;
-}
-.hero-actions {
-  animation: fadeUp 0.8s 0.36s both;
-}
+/* Hero entrance animations removed to show primary content immediately and reduce LCP render delay. */
 .page-hero {
   background: linear-gradient(120deg, var(--navy), var(--navy2));
   color: #fff;
