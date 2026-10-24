@@ -4,7 +4,7 @@
   --gold: #d9a928;
   --gold-light: #f1d18a;
   --ink: #26354a;
-  --muted: #566477;
+  --muted: #667386;
   --paper: #fff;
   --soft: #f3f5f8;
   --line: #e1e6ed;
@@ -132,12 +132,7 @@ nav a.active:after {
   background: transparent;
   color: #fff;
   border: 0;
-  padding: 8px 10px;
-  min-width: 44px;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6px 8px;
   cursor: pointer;
   font-size: 0.78rem;
 }
@@ -153,8 +148,6 @@ nav a.active:after {
   border-radius: 10px;
   color: #fff;
   padding: 8px 11px;
-  min-width: 44px;
-  min-height: 44px;
   font-size: 1.2rem;
 }
 .btn {
@@ -225,7 +218,7 @@ nav a.active:after {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #805d00;
+  color: var(--gold);
   font-weight: 800;
   font-size: 0.86rem;
   letter-spacing: 0.06em;
@@ -954,5 +947,3 @@ main:focus {
     grid-column: 2;
   }
 }
-
-.social-links a { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
