@@ -959,11 +959,6 @@ main:focus {
   margin: 16px 0;
 }
 
-@media (min-width: 1051px) {
-  .cards > .card:last-child:nth-child(3n + 1) {
-    grid-column: 2;
-  }
-}
 
 .brand img,
 .footer-logo {
