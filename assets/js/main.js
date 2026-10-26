@@ -24,15 +24,31 @@ function initCaptcha(form) {
 
   const widget = document.createElement("div");
   widget.className = "h-captcha";
-  widget.dataset.sitekey = HCAPTCHA_SITEKEY;
   button.before(widget);
 
-  const lang = document.documentElement.lang || "en";
-  const script = document.createElement("script");
-  script.src = `https://js.hcaptcha.com/1/api.js?hl=${lang}&recaptchacompat=off`;
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
+  // hCaptcha is about 500 KB of script, so it is loaded only when the visitor
+  // starts using the form instead of on every page view.
+  let started = false;
+
+  const start = () => {
+    if (started) return;
+    started = true;
+
+    window.onHcaptchaReady = () => {
+      window.hcaptcha.render(widget, { sitekey: HCAPTCHA_SITEKEY });
+    };
+
+    const lang = document.documentElement.lang || "en";
+    const script = document.createElement("script");
+    script.src = `https://js.hcaptcha.com/1/api.js?render=explicit&onload=onHcaptchaReady&hl=${lang}&recaptchacompat=off`;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  };
+
+  ["focusin", "pointerdown", "touchstart", "keydown", "submit"].forEach((type) =>
+    form.addEventListener(type, start, { once: true, passive: true }),
+  );
 }
 
 function initContactForm() {
