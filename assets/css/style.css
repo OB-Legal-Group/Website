@@ -400,8 +400,11 @@ h3 {
   font-size: 1.5rem;
   margin-bottom: 19px;
 }
+.card h2,
 .card h3 {
   font-size: 1.15rem;
+  line-height: 1.4;
+  letter-spacing: normal;
   margin-bottom: 9px;
 }
 .card p {
@@ -618,6 +621,7 @@ html[dir="ltr"] .text-link:hover span {
 }
 .h-captcha {
   margin: 16px 0;
+  min-height: 78px;
 }
 /* ===== Legal pages ===== */
 .legal-copy {
@@ -686,6 +690,18 @@ html[dir="ltr"] .footer-social .social-links a:hover {
   object-position: start center;
   margin-bottom: 18px;
   height: auto;
+}
+html[lang="ar"] .brand img,
+html[lang="ar"] .footer-logo {
+  aspect-ratio: 423 / 134;
+}
+html[lang="en"] .brand img,
+html[lang="en"] .footer-logo {
+  aspect-ratio: 485 / 134;
+}
+html[lang="tr"] .brand img,
+html[lang="tr"] .footer-logo {
+  aspect-ratio: 480 / 134;
 }
 .footer-grid p {
   color: #b9c4d2;
