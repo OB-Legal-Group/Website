@@ -1,5 +1,42 @@
 /* OB Legal Group — main stylesheet. Sections follow page order. */
 
+/* ===== Fonts (self-hosted, SIL Open Font License) ===== */
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("../fonts/cairo-arabic-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../fonts/cairo-arabic-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url("../fonts/cairo-arabic-800.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url("../fonts/manrope-latin-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: optional;
+  src: url("../fonts/manrope-latin-700.woff2") format("woff2");
+}
+
 :root {
   --navy: #14253d;
   --navy2: #203753;
@@ -25,13 +62,13 @@ body {
   margin: 0;
   color: var(--ink);
   background: #fff;
-  font-family: "Cairo", "Manrope", Arial, sans-serif;
+  font-family: "Cairo", Arial, sans-serif;
   line-height: 1.85;
   overflow-x: hidden;
 }
 html[lang="en"] body,
 html[lang="tr"] body {
-  font-family: "Manrope", "Cairo", Arial, sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
 }
 a {
   color: inherit;
@@ -320,6 +357,9 @@ h3 {
     sans-serif;
   color: #ffffff08;
   pointer-events: none;
+}
+html[lang="ar"] .page-hero:after {
+  font-family: "Cairo", sans-serif;
 }
 .page-hero h1 {
   font-size: clamp(2.2rem, 4vw, 3.7rem);
