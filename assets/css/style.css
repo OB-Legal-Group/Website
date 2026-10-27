@@ -1006,7 +1006,7 @@ html[lang="tr"] .footer-logo {
 /* Mobile hero photo: start from the right edge instead of the center */
 @media (max-width: 600px) {
   .hero {
-    background-position: right center;
+    background-position: center;
   }
 }
 /* ===== Reduced motion ===== */
