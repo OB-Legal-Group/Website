@@ -5,35 +5,35 @@
   font-family: "Cairo";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("../fonts/cairo-arabic-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url("../fonts/cairo-arabic-700.woff2") format("woff2");
 }
 @font-face {
   font-family: "Cairo";
   font-style: normal;
   font-weight: 800;
-  font-display: optional;
+  font-display: swap;
   src: url("../fonts/cairo-arabic-800.woff2") format("woff2");
 }
 @font-face {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("../fonts/manrope-latin-400.woff2") format("woff2");
 }
 @font-face {
   font-family: "Manrope";
   font-style: normal;
   font-weight: 700 800;
-  font-display: optional;
+  font-display: swap;
   src: url("../fonts/manrope-latin-700.woff2") format("woff2");
 }
 
