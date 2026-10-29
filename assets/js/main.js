@@ -13,7 +13,7 @@ function initNavigation() {
 
 /* hCaptcha: set to false to remove the captcha from the contact form.
    Keep it in sync with the hCaptcha option in your Web3Forms dashboard. */
-const CAPTCHA_ENABLED = false;
+const CAPTCHA_ENABLED = true;
 const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"; // public Web3Forms free-plan key
 
 function initCaptcha(form) {
