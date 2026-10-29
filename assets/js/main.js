@@ -14,6 +14,15 @@ function initNavigation() {
 /* hCaptcha: set to false to remove the captcha from the contact form.
    Keep it in sync with the hCaptcha option in your Web3Forms dashboard. */
 const CAPTCHA_ENABLED = true;
+
+/* Web3Forms enforces hCaptcha per access key (Web3Forms dashboard > your form >
+   Block Spam). So the page switches between two keys:
+   - KEY_WITH_CAPTCHA:    a key that has hCaptcha ENABLED in the dashboard
+   - KEY_WITHOUT_CAPTCHA: a key that has hCaptcha OFF (create a second key on
+                          web3forms.com with the same email, leave it empty here
+                          until you have it) */
+const KEY_WITH_CAPTCHA = "5bcd8047-9d97-4e47-b2b8-fe8d5bf094c3";
+const KEY_WITHOUT_CAPTCHA = "";
 const HCAPTCHA_SITEKEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2"; // public Web3Forms free-plan key
 
 function initCaptcha(form) {
@@ -84,6 +93,18 @@ function initContactForm() {
     }
 
     const data = new FormData(form);
+
+    if (CAPTCHA_ENABLED) {
+      data.set("access_key", KEY_WITH_CAPTCHA);
+    } else if (KEY_WITHOUT_CAPTCHA) {
+      data.set("access_key", KEY_WITHOUT_CAPTCHA);
+      data.delete("h-captcha-response");
+    } else {
+      console.warn(
+        "CAPTCHA_ENABLED is false but KEY_WITHOUT_CAPTCHA is empty: " +
+          "the form still uses the key that requires hCaptcha, so the server will reject it.",
+      );
+    }
 
     if (d.endpoint) {
       const button = form.querySelector('[type="submit"]');
