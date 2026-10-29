@@ -440,6 +440,15 @@ html[lang="ar"] .page-hero:after {
   font-size: 1.5rem;
   margin-bottom: 19px;
 }
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .card h2,
 .card h3 {
   font-size: 1.15rem;
@@ -733,15 +742,15 @@ html[dir="ltr"] .footer-social .social-links a:hover {
 }
 html[lang="ar"] .brand img,
 html[lang="ar"] .footer-logo {
-  aspect-ratio: 423 / 134;
+  aspect-ratio: 495 / 134;
 }
 html[lang="en"] .brand img,
 html[lang="en"] .footer-logo {
-  aspect-ratio: 485 / 134;
+  aspect-ratio: 536 / 134;
 }
 html[lang="tr"] .brand img,
 html[lang="tr"] .footer-logo {
-  aspect-ratio: 480 / 134;
+  aspect-ratio: 536 / 135;
 }
 .footer-grid p {
   color: #b9c4d2;
@@ -1006,11 +1015,7 @@ html[lang="tr"] .footer-logo {
 /* Mobile hero photo: start from the right edge instead of the center */
 @media (max-width: 600px) {
   .hero {
-    background-position: left;
-  }
-
-  .hero img {
-    transform: scaleX(-1);
+    background-position: right center;
   }
 }
 /* ===== Reduced motion ===== */
