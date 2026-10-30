@@ -13,7 +13,7 @@ function initNavigation() {
 
 /* hCaptcha: set to false to remove the captcha from the contact form.
    Keep it in sync with the hCaptcha option in your Web3Forms dashboard. */
-const CAPTCHA_ENABLED = true;
+const CAPTCHA_ENABLED = flase;
 
 /* Web3Forms enforces hCaptcha per access key (Web3Forms dashboard > your form >
    Block Spam). So the page switches between two keys:
